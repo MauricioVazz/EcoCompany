@@ -1,0 +1,1053 @@
+/*------------------------*\
+ style
+\*------------------------*/
+
+/*------------------------*\
+ copyright 2024 - 
+\*------------------------*/
+
+/*------------------------*\
+ Propriedade customisadas
+\*------------------------*/
+
+:root {
+    /* Color */
+    --black: #000000;
+    --preto: #1f1f1f;
+    --branco: #ffffff;
+    --bege: #ffeee7;
+    --azulmarinho: #2f2f51;
+    --grafit: #4a4a4a;
+    --verde: #51c751;
+    --verdelogo: #3b6050;
+    --verdebanner: #344947;
+    --verdebotao: #7fd63d;
+    --cinzagrafit-tranparente: #363636da;
+
+    /* Tipografia */
+    --ff-poppins: "Poppins", sans-serif;
+
+    --fs-40: 4rem;/*4x16px*/
+    --fs-30: 3rem;
+    --fs-24: 2.4rem;
+    --fs-18: 1.8rem;
+    --fs-14: 1.4rem;
+    --fs-12: 1.3rem;
+
+    --fw-300: 300;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    /* Espaço */
+    --section-padding: 80px;
+
+    /* Borda */
+    --radius-5: 5px;
+    --radius-8: 8px;
+
+    /* Sombra */
+    --shadow-1: 10px 0 60px hsla(0, 0%, 15%, 0.07);
+    --shadow-2: 10px 0 60px hsla(0, 0%, 15%, 0.1);
+    --shadow-3: 10px 0 60px #1d1d1d1f;
+    --shadow-4: 10px 0 60px #1d1d1d10;
+
+    /* Transição */
+    --transition-1: 0.25s ease;
+    --transition-2: 0.50s ease;
+    --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+}
+
+/*------------------------*\
+ Reset
+\*------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+img,
+span,
+data,
+input,
+botton,
+textarea,
+ion-icon {
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    height: auto;
+}
+
+input,
+select,
+textarea {
+    background: none;
+    border: none;
+    font: inherit;
+}
+
+input,
+select,
+text {
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+html {
+    font-family: var(--ff-poppins);
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bege);
+    color: var(--black);
+    font-size: 1.6rem;
+    line-height: 2;
+    padding-top: 180px;
+}
+
+:focus-visible {
+    outline-offset: 4px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bege);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--verdebanner);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--verdebotao);
+}
+
+/*------------------------*\
+ style - reuso
+\*------------------------*/
+
+.container,
+.container-paginas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Espaçamento interno */
+}
+
+.section-text {
+    padding: 0 15px; /* Espaçamento específico para texto */
+    line-height: 1.6; /* Melhor legibilidade */
+}
+
+/* Ajuste em dispositivos menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px; /* Menor espaçamento em telas pequenas */
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    color: var(--black);
+    background-color: var(--verdebotao);
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    width: 150px;
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-14);
+    font-weight: var(--fw-600);
+    text-transform: uppercase;
+    border-radius: var(--radius-5);
+    gap: 10px;
+    max-width: max-content;
+    overflow: hidden;
+}
+
+.has-bg-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section {
+    padding-block: var(--section-padding);
+}
+
+.h1,
+.h2,
+.h3 {
+    font-family: var(--ff-poppins);
+    line-height: 1.3;
+}
+
+.h1,
+.h2 {
+    text-transform: uppercase;
+}
+
+.h1,
+.h3 {
+    font-weight: var(--fw-600);
+}
+
+.h1 {
+    color: var(--branco);
+    font-size: var(--fs-40);
+}
+
+.h2,
+.h3 {
+    color: var(--preto);
+}
+
+.h2 {
+    font-size: var(--fs-30);
+}
+
+.h3 {
+    font-size: var(--fs-24);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid-list {
+    display: grid;
+    gap: 30px;
+}
+
+/*------------------------*\
+ Header
+\*------------------------*/
+
+.header-bar {
+    background-color: var(--verdebanner);
+    box-shadow: var(--shadow-2);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+}
+
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.header-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.header-link {
+    font-size: var(--fs-14);
+    font-weight: var(--fw-600);
+    color: var(--branco);
+    text-transform: uppercase;
+}
+
+.header-link:hover {
+    color: var(--verdebotao);
+}
+
+/* header botoes */
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.header-actions a ion-icon {
+    font-size: 2.3rem; /* Aumenta o tamanho do ícone */
+}
+
+.login-btn,
+.cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--black);
+    font-size: var(--fs-14);
+    text-transform: uppercase;
+}
+
+.login-btn:hover,
+.cart-btn:hover {
+    background-color: var(--azulmarinho);
+    color: var(--branco);
+}
+
+/* Botão do Carrinho */
+.cart-btn {
+    border: none;
+    border-radius: var(--radius-5);
+    cursor: pointer;
+  }
+  
+  .cart-btn:hover {
+    background-color: var(--azulmarinho);
+  }
+  
+  .cart-btn ion-icon {
+    font-size: 2.3rem;
+  }
+  
+
+/* Menu do Carrinho */
+.cart-dropdown {
+    display: none; /* Inicialmente escondido */
+    position: absolute;
+    top: calc(100% + 10px); /* Posicionado abaixo do botão */
+    right: 0;
+    width: 500px; /* Ajuste para ficar do tamanho do botão */
+    background: var(--branco);
+    border-radius: var(--radius-5);
+    box-shadow: var(--shadow-3);
+    overflow: hidden;
+    z-index: 10;
+    animation: fadeIn 0.3s ease;
+    padding: 10px; /* Pequeno espaçamento interno */
+}
+  
+.cart-dropdown.show {
+    display: block; /* Mostra o menu quando ativado */
+}
+  
+/* Cabeçalho do Carrinho */
+.cart-header {
+    padding: 10px; /* Reduzido para combinar com o tamanho compacto */
+    background-color: var(--verdebanner);
+    color: var(--branco);
+    text-align: center;
+}
+  
+.cart-header h3 {
+    font-size: var(--fs-12); /* Texto menor */
+    font-weight: var(--fw-600);
+    margin: 0;
+}
+  
+/* Lista de Itens */
+.cart-items {
+    list-style: none;
+    padding: 5px 0; /* Reduzido */
+    margin: 0;
+}
+  
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento menor */
+    margin-bottom: 5px;
+}
+  
+.cart-item img {
+    width: 30px; /* Imagem menor */
+    height: 30px;
+    object-fit: cover;
+    border-radius: var(--radius-5);
+}
+  
+.item-info p {
+    font-size: var(--fs-12); /* Texto menor */
+    font-weight: var(--fw-500);
+    margin: 0;
+}
+  
+.item-info span {
+    font-size: var(--fs-12);
+    color: var(--grafit);
+}
+  
+/* Rodapé do Carrinho */
+.cart-footer {
+    padding: 5px; /* Reduzido */
+    background-color: var(--bege);
+    text-align: center;
+}
+  
+.cart-footer p {
+    font-size: var(--fs-12); /* Texto menor */
+    margin-bottom: 5px;
+}
+  
+.cart-footer .btn {
+    background-color: var(--verdebotao);
+    color: var(--branco);
+    padding: 5px 10px; /* Tamanho reduzido */
+    border: none;
+    border-radius: var(--radius-5);
+    font-size: var(--fs-12); /* Fonte menor */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.cart-footer .btn:hover {
+    background-color: var(--azulmarinho);
+}
+  
+/* Animação */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+/* Responsa */
+
+@media (max-width: 768px) {
+    .header-menu {
+        display: none; /* Esconde o menu por padrão */
+        flex-direction: column;
+        gap: 15px;
+        background-color: var(--verdebanner);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px;
+    }
+
+    .header-menu.active {
+        display: flex;
+    }
+
+    .header-actions {
+        flex-direction: row-reverse;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: var(--fs-30);
+        cursor: pointer;
+        color: var(--branco);
+    }
+}
+
+/* Oculta o menu hambúrguer em telas grandes */
+.menu-toggle {
+    display: none;
+}
+
+/* Exibe o menu hambúrguer apenas em telas pequenas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-menu {
+        display: none; /* Oculta o menu principal por padrão */
+    }
+
+    .header-menu.active {
+        display: flex; /* Mostra o menu quando ativado */
+        flex-direction: column; /* Torna os itens empilhados */
+        gap: 15px; /* Adiciona espaçamento entre os itens */
+        background-color: var(--verdebanner); /* Fundo do menu */
+        position: absolute; /* Posiciona o menu sobre o conteúdo */
+        top: 100%; /* Alinha o menu logo abaixo do header */
+        left: 0;
+        right: 0;
+        padding: 20px;
+        z-index: 1000;
+    }
+}
+
+/* Responsividade adicional para telas menores */
+
+@media (max-width: 768px) {
+    /* Diminuir paddings de seções */
+    .section {
+        padding-block: 40px; /* Reduz para ocupar menos espaço em telas pequenas */
+    }
+
+    /* Header: melhorar interação e layout */
+    .header-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .header-actions {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    /* Texto: Ajustar tamanhos */
+    .h1 {
+        font-size: var(--fs-30); /* Tamanho menor para H1 */
+    }
+
+    .h2 {
+        font-size: var(--fs-24); /* Tamanho menor para H2 */
+    }
+
+    .h3 {
+        font-size: var(--fs-18); /* Tamanho menor para H3 */
+    }
+
+    /* Ajuste nos botões */
+    .btn {
+        padding: 8px 15px; /* Reduz os espaçamentos */
+        font-size: var(--fs-12);
+    }
+
+    /* Cards em grid */
+    .section-img {
+        grid-template-columns: 1fr; /* Cada card ocupa a linha inteira */
+        gap: 15px; /* Ajusta o espaçamento */
+    }
+
+    /* Rodapé */
+    .footer .container {
+        flex-direction: column; /* Empilha itens no footer */
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Extra pequeno: ajustes para telas menores que 480px */
+@media (max-width: 480px) {
+    /* Diminuir ainda mais paddings */
+    .section {
+        padding-block: 20px;
+    }
+
+    /* Header: elementos ainda mais compactos */
+    .header-menu {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%; /* Botões ocupam toda a largura */
+    }
+
+    /* Texto menor */
+    .h1 {
+        font-size: var(--fs-24); /* Texto principal */
+    }
+
+    .h2, .h3 {
+        font-size: var(--fs-18);
+    }
+}
+
+
+/* section */
+
+section {
+    padding-top: 80px;
+    scroll-margin-top: 100px;
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: var(--branco);
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow-4);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .modal-content label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0 5px;
+    text-align: left;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--branco);
+    background-color: var(--verdebotao);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--azulmarinho);
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #000;
+  }
+
+/*------------------------*\
+ Hero
+\*------------------------*/
+
+/* Ajustes para o conteúdo abaixo do header */
+main {
+    margin-top: 0; /* Remove qualquer margem desnecessária */
+}
+
+.hero-text {
+    color: var(--branco);
+    margin-block: 15px 40px;
+}
+
+.hero {
+    --section-padding: 100px;
+    background-position: left;
+    padding-block-start: calc(var(--section-padding) + 40px);
+    padding-top: 60px;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#searchBar {
+    width: 250px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid var(--grafit);
+    border-radius: 4px 0 0 4px;
+    background-color: var(--bege);
+}
+
+#searchButton {
+    padding: 8px 12px;
+    background-color: var(--verdebotao);
+    color: var(--preto);
+    border: none;
+    font-weight: var(--fw-700);
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+#searchResults {
+    margin: 20px;
+    font-size: 16px;
+}
+
+
+/*------------------------*\
+ Descricao
+\*------------------------*/
+
+.section-text {
+    margin-block: 15px 55px;
+}
+
+
+/*------------------------*\
+ Serviços
+\*------------------------*/
+
+.section-serviços {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0; /* Espaçamento acima e abaixo da seção */
+}
+
+/* imagens */
+
+.section-img {
+    display: grid; /* Usamos Grid para alinhar uniformemente os cards */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria colunas uniformes */
+    gap: 20px; /* Espaçamento entre os cards */
+    width: 100%;
+    max-width: 1200px; /* Limita a largura total da seção para centralizar */
+    padding: 0 20px; /* Espaçamento nas laterais */
+    margin: 0 auto; /* Centraliza a grade na página */
+}
+
+.servisces-img {
+    display: grid; /* Usamos flex aqui também para organizar os cards */
+    gap: 20px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte */
+    justify-content: space-between; /* Espaço igual entre os cards */
+    width: 100%;
+}
+
+.container-img .grid-list {
+    display: flex; /* Torna os itens flexíveis */
+    justify-content: space-between; /* Espaça os itens igualmente */
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o espaçamento padrão da lista */
+    margin: 0; /* Remove margens padrão */
+}
+
+.grid-list li {
+    flex: 1; /* Faz com que todos os itens tenham o mesmo tamanho */
+    text-align: center; /* Centraliza o conteúdo dos itens */
+}
+
+.card {
+    margin: 0 auto; /* Garante que os itens sejam centralizados */
+    max-width: 300px; /* Define um tamanho máximo para os cartões */
+}
+
+.card-image {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    height: auto; /* Mantém a proporção */
+}
+
+
+.card-2 {
+    order: 2;
+}
+
+.card-3 {
+    order: 3;
+    white-space: nowrap;
+}
+
+.card-4 {
+    order: 4;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--bege);
+    border-radius: var(--radius-8);
+    overflow: hidden;
+    box-shadow: var(--shadow-3);
+    font-family: var(--ff-poppins);
+    text-align: center;
+}
+
+.card img {
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: auto; /* Mantém a proporção */
+}
+
+
+.card-footer {
+    background-color: var(--azulmarinho); /* Fundo do footer */
+    color: var(--branco); /* Cor do texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: var(--fs-14);
+    width: 100%;
+}
+
+.card-title {
+    font-weight: var(--fw-600); /* Peso da fonte */
+    text-align: center; /* Alinha o texto horizontalmente */
+    display: inline-block; /* Opcional, mantém o conteúdo compacto */
+}
+
+/* Efeito hover no card */
+.card-price:hover {
+    background-color: var(--verdebanner);
+}
+
+.section-text {
+    margin-block: 15px 55px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section-img {
+        grid-template-columns: 1fr; /* Em telas menores, os cards ocupam toda a largura */
+    }
+}
+
+/*------------------------*\
+ Cursos
+\*------------------------*/
+
+.container-img {
+    display: flex; /* Usa Grid para melhor controle do layout */
+    gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.container-img img {
+    max-width: 100%; /* Garante que as imagens não ultrapassem o tamanho do card */
+    height: auto; /* Mantém a proporção */
+    box-shadow: var(--shadow-1); /* Adiciona uma sombra leve */
+}
+
+
+/*------------------------*\
+ Paginas
+\*------------------------*/
+
+.container-paginas {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+
+.botao-comprar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+/* Link com a classe btn-center */
+.btn-center {
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente no centro */
+    align-items: center; /* Alinha verticalmente no centro */
+    position: absolute; /* Posicionamento absoluto em relação ao contêiner pai */
+    left: 20px; /* Centraliza horizontalmente */
+}
+
+/* Ajuste opcional para o conteúdo dentro do botão */
+.btn-center span,
+.btn-center ion-icon {
+    display: inline-block;
+    /* Pode adicionar outros estilos conforme necessário */
+}
+
+.grid-container {
+    display: flex;
+    grid-template-columns: 1fr 1fr; /* 2 colunas de tamanho igual */
+    gap: 10px; /* Espaço entre colunas */
+    align-items:center; /* Alinha verticalmente */
+    justify-content: space-between;
+    padding: 30px 0px;
+}
+
+.services-img,
+.cursos-img {
+    max-width: 100%; /* Ajusta a imagem à coluna */
+    height: auto; /* Mantém a proporção */
+}
+
+.text-grid {
+    text-align: center; /* Alinha o texto à esquerda */
+}
+
+/*------------------------*\
+ Roda pé
+\*------------------------*/
+
+/* Estilos do Rodapé */
+.footer {
+    background-color: var(--verdebanner);
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+}
+
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer p, .footer ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: var(--verdebotao);
+}
+
+.footer .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+    color: var(--branco);
+    transition: color 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: var(--verdebotao);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+/*----------------------*\
+ BOTÃO TOP
+\*----------------------*/
+.back-top-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    background-color: var(--verdebotao);
+    color: var(--branco);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: var(--radius-5);
+    z-index: 4;
+    transition: var(--transition-1);
+}
+
+.back-top-btn:is(:hover, :focus) {
+    color: var(--cinza);
+}
+
+/*----------------------*\
+ Media querry
+\*----------------------*/
+
+@media (max-width: 1200px) {
+    .card-3 {
+        order: 3;
+        white-space: wrap;
+    }
+    .section-cursos .container-img .grid-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 830px) {
+    .header-menu {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container-img .grid-list {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .section-cursos .container-img .grid-list {
+        grid-template-columns: 1fr; /* 1 coluna em telas menores */
+    }
+}
+
+@media (max-width: 575px) {
+    #searchBar {
+        width: 150px; /* Reduzindo a largura da barra */
+        font-size: 14px; /* Opcional: ajusta o tamanho do texto */
+    }
+
+    #searchButton {
+        padding: 6px 10px; /* Ajusta o botão */
+        font-size: 14px;
+    }
+
+    .grid-container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .container,
+    .header-top {
+        max-width: 540px;
+        width: 100%;
+        margin-inline: auto;
+    }
+}

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Company</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/Eco-svg.svg" type="image/x-icon">
+
+    <!-- Link css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Preload -->
+    <link rel="preload" as="image" href="img/banner.jpg">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-bar">
+            <div class="container">
+                <nav class="header-nav">
+                    <a href="index.html" class="logo">
+                        <img src="img/Eco-svg.svg" alt="Logo" width="150" height="150" />
+                    </a>
+                    <ul class="header-menu">
+                        <li><a href="index.html" class="header-link">Home</a></li>
+                        <li><a href="index.html#descricao" class="header-link">Descrição</a></li>
+                        <li><a href="index.html#servicos" class="header-link">Serviços</a></li>
+                        <li><a href="index.html#cursos" class="header-link">Cursos</a></li>
+                    </ul>
+                    <div class="header-actions">
+                        <a href="#login" class="btn login-btn" onclick="openLoginModal()">
+                            <span>Login</span>
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                        </a>
+
+                        <a href="#" id="cart-btn" class="btn cart-btn">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </a>
+
+                        <div class="menu-toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
+
+                        <div id="cart-dropdown" class="cart-dropdown">
+                                <div class="cart-header">
+                                  <h3>Seu Carrinho</h3>
+                                </div>
+                            
+                                <ul class="cart-items">
+                                    <li class="cart-item">
+                                        <img src="produto1.jpg" alt="Produto 1" />
+                                        <div class="item-info">
+                                        <p>Produto 1</p>
+                                        <span>R$50</span>
+                                        </div>
+                                    </li>
+                                    <li class="cart-item">
+                                        <img src="produto2.jpg" alt="Produto 2" />
+                                        <div class="item-info">
+                                        <p>Produto 2</p>
+                                        <span>R$75</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            
+                                <div class="cart-footer">
+                                  <p>Total: <strong>R$125</strong></p>
+                                  <button class="btn">Finalizar Compra</button>
+                                </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container-paginas">
+            <div class="section-title">
+                <h2 class="h2 section-title text-center">
+                    Vistoria
+                </h2>
+            </div>
+
+            <div class="section-text">
+                <p class="section-text text-center">
+                    A vistoria ambiental é essencial para identificar práticas que contribuem para a sustentabilidade. Nosso serviço ajuda empresas a reduzir emissões, evitar desperdícios e cumprir normas ambientais, promovendo uma operação mais limpa e eficiente.
+                </p>
+            </div>
+
+            <h2 class="h2 section-title text-center">
+                Tipos de vistorias sustentáveis
+            </h2>
+
+            <div class="grid-container">
+                <div class="services-img">
+                    <img src="img/servicos/imgsev-red1.png" width="250px" height="250px">
+                </div>
+
+                <div class="section-text text-grid">
+                    <p class="section-text text-center">
+                        Vistoria de emissões: Avaliação dos sistemas de escapamento e controle de poluentes para reduzir impactos.
+                        <br>
+                        Vistoria de eficiência energética: Garantia de que os veículos operam com consumo mínimo de combustível.
+                        <br>
+                        Vistoria para certificações ambientais: Suporte no cumprimento de requisitos ecológicos e regulatórios.
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="h2 section-title text-center">
+                Benefícios para sua empresa
+            </h2>
+
+            <div class="grid-container">
+                <div class="services-img">
+                    <img src="img/servicos/imgsev-red1.png" width="250px" height="250px">
+                </div>
+
+                <div class="section-text text-grid">
+                    <p class="section-text text-grid text-center">
+                        Melhore sua reputação com práticas sustentáveis.
+                        
+                        Economize recursos e reduza custos operacionais.
+                        
+                        Contribua para um meio ambiente mais saudável e alinhe-se às exigências legais.
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="h2 section-title text-center">
+                Benefícios para sua empresa
+            </h2>
+
+            <div class="grid-container">
+                <div class="services-img">
+                    <img src="img/servicos/imgsev-red1.png" width="250px" height="250px">
+                </div>
+
+                <div class="section-text text-grid">
+                    <p class="section-text text-center">
+                        Utilizamos tecnologias avançadas e especialistas para inspecionar sua frota. Entregamos relatórios detalhados com soluções práticas e sustentáveis, focados no desempenho e na preservação ambiental.
+                    </p>
+                </div>
+            </div>
+
+            <div class="botao-compra">
+            <a href="#" class="btn">
+                <span class="span">Comprar</span>
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Sobre Nós</h3>
+                    <p>
+                        Somos especialistas em ajudar empresas a adotarem práticas sustentáveis,
+                        transformando desafios ambientais em oportunidades para o futuro.
+                    </p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#descricao">Descrição</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#cursos">Cursos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contato</h3>
+                    <p>Email: contato@empresaeco.com</p>
+                    <p>Telefone: (11) 98765-4321</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com" aria-label="Facebook" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="https://www.instagram.com" aria-label="Instagram"><ion-icon name="logo-instagram" target="_blank"></ion-icon></a>
+                        <a href="https://www.linkedin.com" aria-label="LinkedIn"><ion-icon name="logo-linkedin" target="_blank"></ion-icon></a>
+                        <a href="www.youtube.com" aria-label="Youtube"><ion-icon name="logo-youtube" target="_blank"></ion-icon></a>
+                        <a href="www.twitter.com" aria-label="Twitter"><ion-icon name="logo-twitter" target="_blank"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eco Company. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Login</h2>
+        <form>
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
+            
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            
+            <button type="submit" class="submit-button">Entrar</button>
+        </form>
+        </div>
+    </div>
+
+    <!-- Carrinho -->
+    <script type="text/javascript">
+        // Seleciona o botão do carrinho e o menu suspenso
+        const cartButton = document.getElementById("cart-btn");
+        const cartDropdown = document.getElementById("cart-dropdown");
+
+        // Adiciona o evento de clique
+        cartButton.addEventListener("click", () => {
+        cartDropdown.classList.toggle("show");
+        });
+
+        // Fecha o menu ao clicar fora dele
+        document.addEventListener("click", (event) => {
+        if (!cartButton.contains(event.target) && !cartDropdown.contains(event.target)) {
+            cartDropdown.classList.remove("show");
+        }
+        });
+
+    </script>
+
+    <script src="js/script.js"></script>
+
+    <!-- Header scrow -->
+
+    <script>
+        document.addEventListener("scroll", function () {
+            const header = document.querySelector(".header-bottom");
+            if (window.scrollY > 50) {
+                header.classList.add("active");
+            } else {
+                header.classList.remove("active");
+            }
+        });
+    </script>
+
+    <!-- Mobile -->
+    <script type="text/javascript">
+        const navToggleBtn = document.querySelector('.nav-toggle-btn');
+        const navbar = document.querySelector('.navbar');
+
+        navToggleBtn.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Alterna a classe "active"
+        });
+
+    </script>
+
+    <!-- Menu hamburguer -->
+    <script type="text/javascript">
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+        document.querySelector('.header-menu').classList.toggle('active');
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
